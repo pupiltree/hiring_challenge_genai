@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: ad_generator_backend
+    command: python app.py # Assuming your Flask/FastAPI app entry point is app.py
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data # Volume for analytics data
+    environment:
+      - REPLICATE_API_KEY=${REPLICATE_API_KEY}
+      - RUNWAY_API_KEY=${RUNWAY_API_KEY}
+    expose:
+      - "5000" # Assuming backend runs on port 5000
+
+  frontend:
+    build: ./frontend
+    container_name: ad_generator_frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    expose:
+      - "3000" # Assuming frontend runs on port 3000 (Next.js default)
+
+  nginx:
+    build: .
+    container_name: ad_generator_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./data:/usr/share/nginx/html/api/data # Mount data volume for analytics access via Nginx if needed (adjust path)
+    depends_on:
+      - frontend
+      - backend 
