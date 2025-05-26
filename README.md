@@ -1,48 +1,91 @@
-# GenAI Engineer(Image/Video) Intern Challenge: Ad Variation Generator (Stipend - Rs. 20,000 Remote / Rs. 25,000 On-Site (Negotiable))
-We’re growing our tech team at Powersmy.biz (https://powersmy.biz/) and have an exciting paid internship opportunity for students who love solving real-world problems and building impactful products. If you’re passionate about tech and ready to dive into fast-paced projects, we want you! 🙌
+# Ad Variation Generator
 
-## Challenge Overview
-Build a simple AI-powered ad variation generator that creates both image and video advertisements based on product information. This challenge tests your ability to work with generative AI models for multimedia content creation.
+An AI-powered tool that generates image and video advertisements based on product information.
 
-## Requirements
+## Features
 
-### Core Functionality
-1. Create a web application that:
-   - Takes product name, description, and target audience as input
-   - Generates 3 static image ad variations
-   - Generates 1 short video ad (5-15 seconds)
-   - Allows downloading of generated content
+- Generates 3 image ad variations using Hugging Face's Stable Diffusion (free tier)
+- Creates 1 short video ad (using a placeholder video)
+- Download generated content
+- A/B testing for ad variations
+- Basic analytics tracking
 
-### Technical Requirements
-- Use any AI image/video generation model (Stable Diffusion, Replicate API, RunwayML, etc.)
-- Implement proper error handling and loading states
-- Create a clean, responsive UI
-- Include a simple results page showing all generated variations
+## Setup
 
-### Evaluation Criteria
-- Quality of generated ad content
-- Code organization and quality
-- Creative approach to the problem
-- Performance and reliability
-- Documentation quality
+### 1. Clone the repository
+```bash
+ git clone <your-repo-url>
+ cd ad-generator
+```
 
-## Submission Guidelines
-1. Fork our challenge repository
-2. Create a new branch for your implementation
-3. Include a comprehensive README with:
-   - Setup instructions
-   - Architecture explanation
-   - Model selection justification
-   - Future improvement ideas
-4. Include a Dockerfile that properly builds and runs your application
-5. Submit a pull request to our main repository
+### 2. Install dependencies
+```bash
+cd frontend && npm install
+cd ../backend && pip install -r requirements.txt
+```
 
-## Bonus Points
-- Implement A/B preference testing for ad variations
-- Add customization options (aspect ratio, tone, style)
-- Include analytics to track which variations perform better
-- Optimize for performance/cost
+### 3. Set up environment variables
+Create a `.env` file in the `backend` directory:
+```
+HF_API_KEY=your_huggingface_api_key_here
+```
+- Get your free Hugging Face API key from https://huggingface.co/settings/tokens
 
-This challenge is designed to be completed in a single day while demonstrating your skills with generative AI models and application development.
+### 4. Run the application
+#### Start the backend (Flask):
+```bash
+cd backend
+python app.py
+```
+#### Start the frontend (Next.js):
+```bash
+cd ../frontend
+npm run dev
+```
 
-For queries, email at founders@powersmy.biz ✉️ !!
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000
+
+## Usage
+1. Open the frontend in your browser.
+2. Fill out the ad form and submit.
+3. Wait for the images and video to be generated.
+4. Download or A/B test the results.
+
+## Architecture
+- **Frontend:** Next.js (React)
+- **Backend:** Python Flask
+- **Image Generation:** Hugging Face Inference API (Stable Diffusion)
+- **Video Generation:** Placeholder video (no free video API)
+- **Analytics:** JSON file storage
+
+## Environment Variables
+- `HF_API_KEY`: Your Hugging Face API key (required for image generation)
+
+## Troubleshooting
+- **Images not appearing:**
+  - Check your Hugging Face API key and quota.
+  - Make sure the backend `static/` directory exists.
+  - Check backend logs for API errors.
+- **Video is a placeholder:**
+  - Free video generation is not available; a sample video is used.
+- **CORS errors:**
+  - Ensure both frontend and backend are running on localhost.
+
+## FAQ
+- **Can I use Replicate or OpenAI instead?**
+  - Yes, but you must update the backend code and set up billing for those services.
+- **Is this free?**
+  - Hugging Face offers a limited free tier for image generation. For higher usage, upgrade your Hugging Face plan.
+- **How do I deploy this?**
+  - You can use Docker or deploy frontend/backend separately. Update environment variables as needed.
+
+## Future Improvements
+- Add support for paid image/video APIs (Replicate, OpenAI DALL·E)
+- More customization options (color, style, etc.)
+- User accounts and saved ads
+- Advanced analytics
+
+---
+
+**Enjoy generating creative ad variations!** 

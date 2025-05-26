@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+*.sqlite3
+instance/
+.webassets-cache
+
+# Flask
+*.log
+*.pot
+*.mo
+*.db
+*.sqlite
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode
+.vscode/
+
+# Data and analytics
+backend/data/
+backend/static/ad_image_*.png
+
+# Node/React/Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+
+# Misc
+*.swp
+*.swo
+
+# Ignore build artifacts
+build/
+dist/
+
+# Ignore coverage reports
+coverage/
+*.cover
+*.coverage
+*.coverage.*
+.cache
+
+# Ignore test output
+junit*.xml
+
+# Ignore backup files
+*~ 
