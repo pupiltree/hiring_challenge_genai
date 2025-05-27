@@ -1,0 +1,8 @@
+streamlit
+vertexai
+google-genai
+google
+time
+os
+trackback
+python-dotenv
