@@ -7,6 +7,8 @@ This project is a Streamlit-based web app that generates **advertisement images 
 * **Target Audience**: Urban dwellers, tech enthusiasts, busy professionals, aspiring home gardeners.
 * **Tone**: Innovative, fresh, effortless, vibrant.
 * **Style**: Sleek, modern, organic, tech-integrated.
+
+## GENERATED AD
 https://github.com/user-attachments/assets/e39f0725-f518-45b1-a4a5-a7e96265495c
 
 ## DEMO VIDEO:
