@@ -1,6 +1,17 @@
 # 🚀 AI Advertisement Content Generator using Vertex AI
 
 This project is a Streamlit-based web app that generates **advertisement images and videos** for a product using **Google Cloud Vertex AI's Imagen and Veo models**.
+## SAMPLE GENERATED AD:
+* **Product Name**: NovaBloom Smart Garden
+* **Description**: An AI-powered indoor garden that automatically manages light, water, and nutrients for your herbs and vegetables. Grow fresh produce year-round, effortlessly.
+* **Target Audience**: Urban dwellers, tech enthusiasts, busy professionals, aspiring home gardeners.
+* **Tone**: Innovative, fresh, effortless, vibrant.
+* **Style**: Sleek, modern, organic, tech-integrated.
+https://github.com/user-attachments/assets/e39f0725-f518-45b1-a4a5-a7e96265495c
+
+## DEMO VIDEO:
+https://github.com/user-attachments/assets/7c7075f3-e1f4-44ac-ac54-b4bca98e8912
+
 
 ## 🌐 Prerequisites
 
@@ -49,8 +60,6 @@ VIDEO_MODEL_VERSION=veo-2.0-generate-001
 GOOGLE_API_KEY=YOUR_API_KEY
 ```
 
-> 🔐 **Never share your API key or `.env` file publicly.**
-
 ### 5. Run the App
 
 ```bash
@@ -60,33 +69,6 @@ streamlit run streamlit_app.py
 The app will open in your default web browser.
 
 ---
-
-## 🧪 Sample Input & Output
-
-### Input
-
-* **Product Name**: NovaBloom Smart Garden
-* **Description**: An AI-powered indoor garden that automatically manages light, water, and nutrients for your herbs and vegetables. Grow fresh produce year-round, effortlessly.
-* **Target Audience**: Urban dwellers, tech enthusiasts, busy professionals, aspiring home gardeners.
-* **Tone**: Innovative, fresh, effortless, vibrant.
-* **Style**: Sleek, modern, organic, tech-integrated.
-
-### Output
-
-#### 📸 Generated Images:
-
-* `generated_images/ad_image_NovaBloom_Smart_Garden_1.png`
-* `generated_images/ad_image_NovaBloom_Smart_Garden_2.png`
-* `generated_images/ad_image_NovaBloom_Smart_Garden_3.png`
-
-#### 🎥 Generated Video:
-
-* `generated_videos/ad_video_NovaBloom_Smart_Garden.mp4`
-
-These outputs are saved locally and displayed in the app UI automatically.
-
----
-
 ## 📂 Project Structure
 
 ```
